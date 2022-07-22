@@ -22,4 +22,9 @@ public class Calculator : MonoBehaviour
         Text_Calc.text = (dt.Compute(Text_Calc.text, "")).ToString();
     }
 
+    public void Delete() {
+        int lenght = Text_Calc.text.Length;
+        Text_Calc.text = Text_Calc.text.Remove(lenght - 1);
+    }
+
 }
