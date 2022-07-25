@@ -9,10 +9,11 @@ public class Calculator : MonoBehaviour
 {
     public Text Text_Calc;
     public string num;
-   // private MemoryCache _cache = new MemoryCache(new MemoryCacheOptions());
+    public DataTable dt = new DataTable();
+    // private MemoryCache _cache = new MemoryCache(new MemoryCacheOptions());
 
-    public void On_Click_Button() {
-        Text_Calc.text += num;
+    public void On_Click_Button(Text name) {
+        Text_Calc.text += name.text;
     }
 
     public void Clear() {
@@ -20,7 +21,7 @@ public class Calculator : MonoBehaviour
     }
 
     public void On_Click_Equals() {
-        DataTable dt = new DataTable();//Get_Or_Create("DataTable");
+        //Get_Or_Create("DataTable");
         Text_Calc.text = (dt.Compute(Text_Calc.text, "")).ToString();
     }
 
